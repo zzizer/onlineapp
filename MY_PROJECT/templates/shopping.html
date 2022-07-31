@@ -1,0 +1,52 @@
+<head>
+    <title>Producs Available</title>
+</head>
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="bg-light text-dark p-5 p-lg-0 pt-lg-5  text-center text-sm-start">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <div>
+                <h1>Work with <span class="text-info"> Experts in the Field</span></h1>
+                <p class="lead my-4">
+                    Hello, You're welcome to this beautiful website, Hope you will find what you're looking for.
+                </p>
+                <p class="lead my-4">
+                    We focus on teaching our students the fundamentals of the latesest
+                    and greatest technologies to prepare them for the first world of Programming.
+                </p>
+                
+                <a href="mycart"><button class="btn btn-primary btn-lg">My Cart</button></a>
+            </div>
+            <img class = "img-fluid w-25 d-none d-sm-block" src="https://media.istockphoto.com/vectors/expert-system-concept-vector-web-design-light-background-vector-id1090568342" alt="">
+        </div>
+    </div>
+</section>
+<hr>
+ <!--1st Part-->
+ <div class="container py-3">
+    <h3 class='text-center'>Available on Market</h3>
+    <div class="row py-2">
+        {% for product in products %}
+        <div class="col-md-4">
+             <div class="card" style="width: 20rem;">
+                 <img src="{{product.image}}" class="card-img-top" alt="{{product.name}}">
+    
+                 <div class="card-body">
+                     <h5 class="card-title">{{product.product_name}}</h5>
+                     <p class="card-text">{{product.description}}</p>
+                     <p class="card-text">Saler: {{product.saler_name}}
+                    <p class="card-text">Category: {{product.category_name}}</p>
+                    
+                     <a href="#" class="btn btn-danger">$. {{product.price}}</a>
+                     <a href="#" class="btn btn-primary">Add to Cart</a>
+                 </div>
+             </div>
+        </div>
+        {% endfor %}
+ </div>
+ 
+{% endblock %}

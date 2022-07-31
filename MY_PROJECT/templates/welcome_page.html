@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/landing_page.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static 'js/bootstrap.css' %}"></script>
+
+    <title>Home Page</title>
+</head>
+<body>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #12475f;
+            color: white;
+            line-height: 1.5;
+            text-align: center;
+        }
+    </style>
+
+    {% for message in messages%}
+        <div class="container bg-light text-danger">
+            <strong>Note: {{message}}</strong>
+        </div>
+    {% endfor %}
+
+    <header id="showcase">
+        <h1>Shopping Simplified</h1>
+    </header>
+
+    <div id="content" class="containers">
+        Electronics Online Shoppers is a Private Company dealing in ICT related work, it basically provided services related to information Technology,
+        it's located in Kampala, the captial City of Uganda, P O. Box 19937.  
+        We focus on teaching our students the fundamentals of the latesest and greatest technologies to prepare them for the first world of Programming.t sed ullam sint? Provident deserunt, esse quaerat, nemo nisi repellendus id aliqu
+        We provide trustable services in Website designing, Hardware design, Machine Learning and So many others.
+    </div>
+    
+    <a href="shopping" class="bt">Press to Continue</a>
+    
+</body>
+</html>
